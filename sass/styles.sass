@@ -1,0 +1,176 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap')
+
+//Variables Fonts
+$primaryFont: 'Montserrat', serif
+$secondaryFont: 'Fraunces', serif
+
+//Variables Colors
+$primaryDarkCyan: hsl(158, 36%, 37%)
+$primaryCream: hsl(30, 38%, 92%)
+$neutralVeryDarkBlue: hsl(212, 21%, 14%)
+$neutralDarkGrayishBlue: hsl(228, 12%, 48%)
+$neutralWhite: hsl(0, 0%, 100%)
+
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+// Удаление стандартного спискового стиля
+ul, ol
+  list-style: none
+
+body
+  background-color: $primaryCream
+  font-size: 14px
+
+
+.container
+  max-width: 1440px
+  margin: 0 auto
+  height: 90vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+.grid-container
+  margin: 0 auto
+  max-width: 600px
+  max-height: 450px
+  display: grid
+  background-color: $neutralWhite
+  grid-template-rows: repeat(5, 90px)
+  grid-template-columns: repeat(2,300px)
+  border-radius: 1rem
+
+.img
+  grid-column: 1
+  grid-row: 1 / span 5
+  background-image: url("/images/image-product-desktop.jpg")
+  background-size: cover
+  border-bottom-left-radius: 1rem
+  border-top-left-radius: 1rem
+
+.heading
+    grid-column: 2
+    grid-row: 1
+    font-family: $primaryFont
+    font-size: 1rem
+    letter-spacing: .2rem
+    padding-left: 1.5rem
+    padding-top: 2rem
+    color: $neutralDarkGrayishBlue
+    margin-top: 1rem
+    text-transform: uppercase
+
+.main--heading
+    grid-column: 2
+    grid-row: 2
+    font-family: $secondaryFont
+    font-size: 1rem
+    letter-spacing: .2rem
+    padding-left: 1.5rem
+    color: $neutralVeryDarkBlue
+
+.description
+  grid-column: 2
+  grid-row: 3
+  font-family: $primaryFont
+  margin-top: 2.3rem
+  padding-left: 1.5rem
+  font-size: 1rem
+  color: $neutralDarkGrayishBlue
+
+
+.price
+  margin-top: 2rem
+  padding-left: 1.5rem
+  font-size: 2rem
+  font-family: $secondaryFont
+  display: flex
+  align-items: center
+  color: $primaryDarkCyan
+  .discounted-price
+    text-decoration: line-through
+    font-size: 1rem
+    font-family: $primaryFont
+    margin-left: 2rem
+    color: $neutralDarkGrayishBlue
+
+
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 1rem auto
+  width: 245px
+  height: 47px
+  background-color: $primaryDarkCyan
+  border-radius: .5rem
+  font-family: $primaryFont
+  font-size: 1rem
+  a
+    text-decoration: none
+    color: $neutralWhite
+    display: flex
+    align-items: center
+    img
+      margin-right: .5rem
+
+
+
+@media (max-width: 375px)
+    .container
+        align-items: start
+        height: 100vh
+        max-width: 350px
+    .grid-container
+        grid-template-rows: 40vh repeat(5, 90px)
+        grid-template-columns: 350px
+        margin: 1rem
+        max-height: 100vh
+
+    .img
+      grid-column: 1
+      grid-row: 1
+      height: 40vh
+      background-image: url("/images/image-product-mobile.jpg")
+      background-size: cover
+      border-radius: unset
+      border-top-left-radius: 1rem
+      border-top-right-radius: 1rem
+
+
+    .heading
+        grid-column: 1
+        grid-row: 2
+        padding-left: 1.5rem
+        padding-top: 1rem
+        margin-bottom: 0
+        font-size: .8rem
+        letter-spacing: .1rem
+        margin-top: .5rem
+
+    .main--heading
+      grid-column: 1
+      grid-row: 3
+      margin-top: -2rem
+
+    .description
+      grid-row: 4
+      grid-column: 1
+      margin-top: .5rem
+
+    .price
+      grid-column: 1
+      grid-row: 5
+      margin-top: -1.5rem
+
+    .btn
+      grid-column: 1
+      grid-row: 6
+      margin-top: -1.8rem
